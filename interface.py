@@ -18,6 +18,7 @@ def attach_sheet():
 
             if 'CEP' in sheet.columns:
                 zcv.zip_code_validation(sheet)  
+                sheet.to_excel(file_path, index=False)
             else:
                 text.insert(tk.END, "Erro! Coluna 'cep' não encontrada na planilha.\n")
         
