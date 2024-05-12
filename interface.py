@@ -4,7 +4,7 @@ import pandas as pd
 import Services.zip_code_validation as zcv
 
 def attach_sheet(): 
-    text = tk.Text(janela_principal)
+    text = tk.Text(window)
     text.pack()
 
     file_type = [("Planilhas Excel", "*.xlsx")]
@@ -24,18 +24,18 @@ def attach_sheet():
         except Exception as e:
             text.insert(tk.END, f"Erro! Planilha NÃO anexada. \nMotivo: {str(e)}\n")
 
-janela_principal = tk.Tk()
-janela_principal.title("CepScan")
+window = tk.Tk()
+window.title("CepScan")
 
-janela_principal.minsize(400, 200)
-janela_principal.maxsize(500, 250)
-janela_principal.configure(bg="#f0f0f0")  
+window.minsize(400, 200)
+window.maxsize(500, 250)
+window.configure(bg="#f0f0f0")  
 
 
-titulo_label = tk.Label(janela_principal, text="Planilha", font=("Helvetica", 18), bg="#f0f0f0")
-titulo_label.pack(pady=10)
+title = tk.Label(window, text="Planilha", font=("Helvetica", 18), bg="#f0f0f0")
+title.pack(pady=10)
 
-botao_anexar = tk.Button(janela_principal, text="Anexar Planilha", font=("Helvetica", 12), command=attach_sheet)
-botao_anexar.pack(pady=10)
+attach_button = tk.Button(window, text="Anexar Planilha", font=("Helvetica", 12), command=attach_sheet)
+attach_button.pack(pady=10)
 
-janela_principal.mainloop()
+window.mainloop()
