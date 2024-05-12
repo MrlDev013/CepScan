@@ -2,8 +2,6 @@ import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
 import Services.zip_code_validation as zcv
-import shutil
-import os
 
 def attach_sheet(): 
     text = tk.Text(janela_principal)
